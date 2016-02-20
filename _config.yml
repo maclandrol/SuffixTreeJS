@@ -1,6 +1,6 @@
 # Site settings
-title: SuffixTreeJS suffix tree in javascript
-tag_text: Generalized suffix tree in javascript
+title: SuffixTreeJS
+tag_text: SuffixTreeJS
 description: "SuffixTreeJS, draw suffix tree in javascript using d3js"
 
 # Build settings
