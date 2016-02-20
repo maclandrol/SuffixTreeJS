@@ -170,5 +170,6 @@ function get_add_special_char(i, special_chars){
 		char_end = String.fromCharCode(start_ind + i*offset);
 	}
 	return char_end;
+}
 
 });
