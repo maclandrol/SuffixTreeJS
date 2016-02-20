@@ -20,24 +20,24 @@
 
 
 .input{
-	display: inline-block;
 	width:inherit;
-	margin: 2rem auto;
+	display: inline-block;
+	margin: auto 30px;
 	padding: 10px auto;
 	margin-bottom: 5rem;
 }
 
 .input textarea{
 	min-height: 60px;
+	min-width: 80%;
 	resize: vertical;
-	width:inherit;
 }
 
 #show{
 	margin-top: 10px;
 	display: block;
+	clear: right;
 	text-align: right;
-	float: right;
 }
 
 .output{
