@@ -36,8 +36,8 @@
 #show{
 	margin-top: 10px;
 	display: block;
-	clear: right;
-	text-align: right;
+	clear: left;
+	text-align: left;
 }
 
 .output{
