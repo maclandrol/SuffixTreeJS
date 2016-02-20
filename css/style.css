@@ -20,19 +20,18 @@
 
 
 .input{
-   	position: relative;
 	display: inline-block;
 }
 
 .input textarea{
 
-	min-width: 70%;
-    min-height: 50px;
+	width : 100%;
+	min-height: 60px;
 
 }
 
 #show{
-	margin-top: 5px;
+	margin-top: 10px;
 	display: block;
 	text-align: right;
 }
