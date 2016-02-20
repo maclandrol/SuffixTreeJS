@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
-var special_chars = '#$&%@=?<>+*_;';
+var special_chars = '#$&%@?+*';
 var colorlist = ["#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","#ffff99","#b15928"];
 var max_string = colorlist.length;
 
 var stree = new SuffixTree();
 stree.addString('MISSION#');
-treeData = stree.addString('MISSISSIPPI$').convertToJson();
+var treeData = stree.addString('MISSISSIPPI$').convertToJson();
 
 
 // ************** Generate the tree diagram	 *****************
@@ -35,7 +35,27 @@ root.x0 = height / 2;
 root.y0 = 0;
 
 $( "#show" ).click(function() {
+	var str_list = $( "#words" ).val().split(",")
+
+	if(str_list.length > max_string){
+		$( "#error" ).text("There is a limit of " + max_string + " strings allowed !")
+		$( "#error" ).toggle(true);
+
+	}
+	else if(str_list.length > 0){
+		$( "#error" ).toggle(false);
+		stree =  new SuffixTree();
+		var i = 0;
+		for(s in str_list){
+			s += get_add_special_char(i, special_chars)
+			stree.addString(s);
+			i += 1;
+		}
+		root =  stree.convertToJson();
+	}
+
   update(root);
+
 });
 
 d3.select(self.frameElement).style("height", "500px");
@@ -77,7 +97,7 @@ function update(source) {
 
   nodeUpdate.select("circle")
 	  .attr("r", 10)
-	  .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+	  .style("fill", function(d) { return d._children ? "lightsteelblue" : colorlist[d.seq]; });
 
   nodeUpdate.select("text")
 	  .style("fill-opacity", 1);
@@ -139,9 +159,16 @@ function click(d) {
   update(d);
 }
 
-function get_add_special_char(i){
-  var start_ind = 1000, offset = 10;
-  return String.fromCharCode(start_ind + i*offset);
-}
+function get_add_special_char(i, special_chars){
+
+	var char_end = ""
+	if (i<special_chars.length){
+		char_end = special_chars[i];
+	}
+	else{
+		var start_ind = 1000, offset = 10;
+		char_end = String.fromCharCode(start_ind + i*offset);
+	}
+	return char_end;
 
 });

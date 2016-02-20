@@ -41,6 +41,17 @@
 	float: right;
 }
 
+#error{
+	border: 1px solid;
+	display : none;
+	margin-bottom:  15px;
+	padding: 10px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	color: #D8000C;
+	background-color: #FFBABA;
+}
+
 .output{
 
 }
