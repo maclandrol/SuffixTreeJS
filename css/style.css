@@ -23,21 +23,21 @@
 	width:inherit;
 	display: inline-block;
 	margin: auto 30px;
-	padding: 10px auto;
 	margin-bottom: 5rem;
 }
 
 .input textarea{
 	min-height: 60px;
 	min-width: 25rem;
+	display: block;
 	resize: vertical;
 }
 
 #show{
 	margin-top: 10px;
 	display: block;
-	clear: left;
-	text-align: left;
+	clear: right;
+	text-align: right;
 }
 
 .output{
