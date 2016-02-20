@@ -29,7 +29,7 @@
 
 .input textarea{
 	min-height: 60px;
-	min-width: 100%;
+	min-width: 25rem;
 	resize: vertical;
 }
 
