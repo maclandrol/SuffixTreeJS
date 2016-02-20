@@ -20,13 +20,20 @@
 
 
 .input{
+	min-width: 20rem;
+   	position: relative;
 	display: inline-block;
 }
 
-#show{
-	float: left;
+.input textarea{
+	min-width: 20rem;
+    min-height: 40px;
 }
 
+#show{
+	display: block;
+	text-align: right;
+}
 
 .output{
 
