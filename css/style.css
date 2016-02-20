@@ -30,6 +30,7 @@
 .input textarea{
 	min-height: 60px;
 	resize: vertical;
+	width:inherit;
 }
 
 #show{
