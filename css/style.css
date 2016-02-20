@@ -22,7 +22,6 @@
 .input{
 	width:inherit;
 	display: inline-block;
-	margin: auto 30px;
 	margin-bottom: 5rem;
 }
 
@@ -38,6 +37,7 @@
 	display: block;
 	clear: right;
 	text-align: right;
+	float: right;
 }
 
 .output{
