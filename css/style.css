@@ -28,7 +28,7 @@
 .input textarea{
 	min-height: 60px;
 	min-width: 20rem;
-	min-width: 28rem;
+	max-width: 28rem;
 	display: block;
 	resize: vertical;
 }
