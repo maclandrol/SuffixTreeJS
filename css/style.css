@@ -21,6 +21,8 @@
 
 .input{
 	display: inline-block;
+	padding: 10px auto;
+	margin-bottom: 5rem;
 }
 
 .input textarea{
@@ -33,7 +35,7 @@
 #show{
 	margin-top: 10px;
 	display: block;
-	text-align: right;
+	text-align: left;
 }
 
 .output{
