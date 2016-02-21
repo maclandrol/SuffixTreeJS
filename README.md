@@ -6,7 +6,7 @@ SuffixTree JS is a javascript implementation of [Ukkonen's algorithm](https://ww
 
 The main contribution is this website : http://mrnoutahi.com/SuffixTreeJS/ that enable suffix trees visualisation using [d3js](https://d3js.org/). 
 
-Important points: 
+####Important points: 
 
 1. Your sequences should be separated by a coma (","). A space is considered as an actual character so don't put spaces between your sequences.
 2. The following characters are special chars used to denote the end of a sequence : ```#$&%@?+*```
