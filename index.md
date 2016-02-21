@@ -3,6 +3,8 @@ layout: default
 ---
 
 [SuffixTreeJS](http://maclandrol.github.io/SuffixTreeJS) is a javascript implementation of [Ukkonen's algorithm](https://www.cs.helsinki.fi/u/ukkonen/SuffixT1withFigs.pdf) for "generalized suffix tree". 
+<br><span height="30" text-align="left">by <a href="http://mrnoutahi.com">Emmanuel Noutahi</a></span>
+
 
 <iframe src="https://ghbtns.com/github-btn.html?user=maclandrol&amp;repo=SuffixTreeJS&amp;type=watch&amp;count=true&amp;size=large"
   allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe><br/>
