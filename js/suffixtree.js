@@ -37,16 +37,19 @@ root.y0 = 0;
 $( "#show" ).click(function() {
 	var str_list = $( "#words" ).val().split(",")
 
-	if(str_list.length > max_string){
-		$( "#error" ).text("There is a limit of " + max_string + " strings allowed !");
-		$( "#error" ).toggle(true);
 
-	}
-	else if (check_char(str_list, special_chars)){
+	if (check_char($( "#words" ).val(), special_chars)){
 		$( "#error" ).text("Your strings should not contain any of this special chars : " +  special_chars);
 		$( "#error" ).toggle(true);
 
 	}
+
+	else if(str_list.length > max_string){
+		$( "#error" ).text("There is a limit of " + max_string + " strings allowed !");
+		$( "#error" ).toggle(true);
+
+	}
+
 	else if(str_list.length > 0 && !(str_list.length==1 && str_list[0]==="")){
 		$( "#error" ).toggle(false);
 		stree =  new SuffixTree();
@@ -181,4 +184,10 @@ function get_add_special_char(i, special_chars){
 	return char_end;
 }
 
+
+function check_char(str1, str2){
+	return str1.split('').filter(function(n){
+		return str2.indexOf(n)!= -1;
+	}).length <1;
+}
 });
