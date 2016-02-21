@@ -174,7 +174,6 @@ SuffixTree.prototype.convertToJson = function(){
     return ret;
 
   }
-  console.log(this.seps);
   return traverse(this.root, this.seps, this.str_list, ret);
 
 }

@@ -38,7 +38,7 @@ $( "#show" ).click(function() {
 	var str_list = $( "#words" ).val().split(",")
 
 
-	if (check_char($( "#words" ).val(), special_chars)){
+	if (!check_char($( "#words" ).val(), special_chars)){
 		$( "#error" ).text("Your strings should not contain any of this special chars : " +  special_chars);
 		$( "#error" ).toggle(true);
 
