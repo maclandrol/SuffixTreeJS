@@ -45,13 +45,14 @@ $( "#show" ).click(function() {
 	else if(str_list.length > 0 && !(str_list.length==1 && str_list[0]==="")){
 		$( "#error" ).toggle(false);
 		stree =  new SuffixTree();
-		var i = 0;
-		for(s in str_list){
-			s += get_add_special_char(i, special_chars)
+		for(var i=0; i<str_list.length; i++){
+			var s = str_list[i] + get_add_special_char(i, special_chars)
 			stree.addString(s);
-			i += 1;
 		}
 		root =  stree.convertToJson();
+		root.x0 = height / 2;
+		root.y0 = 0;
+
 	}
 
   update(root);
