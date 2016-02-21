@@ -64,7 +64,7 @@ $( "#show" ).click(function() {
 		}
 
 		height += str_list.length*50 ;
-		svg.attr("height", height + margin.top + margin.bottom )
+		svg.attr("height", height + margin.top + margin.bottom );
 		root.x0 = height / 2;
 		root.y0 = 0;
   		update(root);
