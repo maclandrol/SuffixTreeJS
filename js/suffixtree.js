@@ -12,7 +12,7 @@ var treeData = stree.addString('MISSISSIPPI$').convertToJson();
 // ************** Generate the tree diagram	 *****************
 var margin = {top: 5, right: 25, bottom: 20, left: 50},
 	width = 960 - margin.right - margin.left,
-	height = 800 - margin.top - margin.bottom;
+	height = 600 - margin.top - margin.bottom;
 	
 var i = 0,
 	duration = 750,
@@ -41,13 +41,11 @@ $( "#show" ).click(function() {
 	if (!check_char($( "#words" ).val(), special_chars)){
 		$( "#error" ).text("Your strings should not contain any of this special chars : " +  special_chars);
 		$( "#error" ).toggle(true);
-
 	}
 
 	else if(str_list.length > max_string){
 		$( "#error" ).text("There is a limit of " + max_string + " strings allowed !");
 		$( "#error" ).toggle(true);
-
 	}
 
 	else{
@@ -60,11 +58,15 @@ $( "#show" ).click(function() {
 				stree.addString(s);
 			}
 			root =  stree.convertToJson();
-			root.x0 = height / 2;
-			root.y0 = 0;
-
+		}
+		else{
+			root = treeData;
 		}
 
+		height += str_list.length*50 ;
+		svg.attr("height", height + margin.top + margin.bottom )
+		root.x0 = height / 2;
+		root.y0 = 0;
   		update(root);
   	}
 
