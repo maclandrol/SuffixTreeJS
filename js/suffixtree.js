@@ -10,7 +10,7 @@ var treeData = stree.addString('MISSISSIPPI$').convertToJson();
 
 
 // ************** Generate the tree diagram	 *****************
-var margin = {top: 15, right: 45, bottom: 20, left: 50},
+var margin = {top: 5, right: 35, bottom: 20, left: 50},
 	width = 960 - margin.right - margin.left,
 	height = 800 - margin.top - margin.bottom;
 	
