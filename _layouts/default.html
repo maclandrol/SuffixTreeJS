@@ -13,14 +13,13 @@
 <body>
   <div class="container">
     <h1><a href="./">{{ site.tag_text }}</a></h1>
+    {{ content }}
     <div class="input">
     <div id="error"></div>
     <textarea id="words" name="words" placeholder="MISSISSIPPI,MISSIONARY"></textarea>
     <button id="show">Draw tree</button>
     </div>
 <div class="output"> </div>
-
-    {{ content }}
   </div>
 {% include scripts.html %}
 </body>
