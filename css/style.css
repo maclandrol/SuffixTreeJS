@@ -44,7 +44,8 @@
 	border: 1px solid;
 	display : none;
 	margin-bottom:  15px;
-	padding: 10px;
+	max-width: 35rem;
+	padding: 7px;
 	color: #D8000C;
 	background-color: #FFBABA;
 }

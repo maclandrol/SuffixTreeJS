@@ -1,6 +1,5 @@
-// This implementation is adapted from the one here :
-// https://github.com/fabsrc/es6-ukkonen-suffix-tree/blob/master/SuffixTree.js
-// Which I think is from http://www.allisons.org/ll/AlgDS/Tree/Suffix/
+// This implementation is adapted from the one here the snippets provided here
+// http://www.allisons.org/ll/AlgDS/Tree/Suffix/
 
 'use strict';
 
@@ -18,8 +17,7 @@ Node.prototype.isLeaf = function() {
 }
 
 
-function SuffixTree (){
-  
+function SuffixTree (){  
     this.text = '';
     this.str_list = [];
     this.seps = []
@@ -133,6 +131,7 @@ SuffixTree.prototype.canonize = function(s, k, p) {
 
 
 SuffixTree.prototype.convertToJson = function(){
+  // convert tree to json to use with d3js
  
   var text = this.text;
   var ret = {

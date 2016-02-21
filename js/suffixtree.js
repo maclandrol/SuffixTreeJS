@@ -38,7 +38,12 @@ $( "#show" ).click(function() {
 	var str_list = $( "#words" ).val().split(",")
 
 	if(str_list.length > max_string){
-		$( "#error" ).text("There is a limit of " + max_string + " strings allowed !")
+		$( "#error" ).text("There is a limit of " + max_string + " strings allowed !");
+		$( "#error" ).toggle(true);
+
+	}
+	else if (check_char(str_list, special_chars)){
+		$( "#error" ).text("Your strings should not contain any of this special chars : " +  special_chars);
 		$( "#error" ).toggle(true);
 
 	}
