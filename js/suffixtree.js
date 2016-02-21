@@ -10,7 +10,7 @@ var treeData = stree.addString('MISSISSIPPI$').convertToJson();
 
 
 // ************** Generate the tree diagram	 *****************
-var margin = {top: 20, right: 0, bottom: 20, left: 0},
+var margin = {top: 15, right: 5, bottom: 20, left: 5},
 	width = 960 - margin.right - margin.left,
 	height = 500 - margin.top - margin.bottom;
 	
@@ -25,7 +25,7 @@ var diagonal = d3.svg.diagonal()
 	.projection(function(d) { return [d.y, d.x]; });
 
 var svg = d3.select(".output").append("svg")
-	.attr("width", width + margin.right + margin.left)
+	.attr("min-width", width + margin.right + margin.left)
 	.attr("height", height + margin.top + margin.bottom)
   .append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
