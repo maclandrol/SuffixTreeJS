@@ -28,6 +28,7 @@
 .input textarea{
 	min-height: 60px;
 	min-width: 20rem;
+	max-width: 40rem;
 	display: block;
 }
 
