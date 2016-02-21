@@ -147,22 +147,15 @@ SuffixTree.prototype.convertToJson = function(){
       var traNs = node.transition[t];
       var s = traNs[0], a = traNs[1], b = traNs[2]; 
       var name =  text.substring(a, b + 1);
-      var position = seps.length -1;
-      var found = true;
-      while(position > -1 && found){
-        if(name.indexOf(seps[position])===-1){
-            found = false;
-          }
-          else{
-            position -= 1;
-          }
-        }
-      if(found) {
-        var names = name.split(seps[position+1]);
-        if (names.length >1){
-          name = names[0] +seps[position+1];  
-        }
-        
+      var position = seps.length-1;
+      for(var pos=name.length -1; pos>-1; pos--){
+         var insep = seps.indexOf(name[pos]);
+         position = insep>-1 ?insep:position;
+      }
+
+      var names = name.split(seps[position]);
+      if (names.length >1){
+          name = names[0] + seps[position];
       }
       var suffix =  ret["suffix"]+name;
       var cchild = {
@@ -172,8 +165,8 @@ SuffixTree.prototype.convertToJson = function(){
         "children": []
       };
       if (s.isLeaf()){
-        cchild['seq'] = position +2;
-        cchild['start'] = ""+(str_list[position+1].length - suffix.length);
+        cchild['seq'] = position +1;
+        cchild['start'] = ""+(str_list[position].length - suffix.length);
       }
       cchild = traverse(s, seps, str_list, cchild);
       ret["children"].push(cchild)
@@ -182,7 +175,7 @@ SuffixTree.prototype.convertToJson = function(){
     return ret;
 
   }
-
+  console.log(this.seps);
   return traverse(this.root, this.seps, this.str_list, ret);
 
 }
