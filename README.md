@@ -8,9 +8,7 @@ My main contribution is this website : http://mrnoutahi.com/SuffixTreeJS/ that e
 
 Each internal node can be collapsed.
 
-The suffix on each leave end with ```[start, number]``` where ```a``` is the position of the suffix (indexing tart at 0) and ```number``` is the sequence number. 
-
-I also use different colors for each sequence in the representation. 
+The suffix on each leave end with ```[start, number]``` where ```start``` is the position of the suffix (indexing start at 0) and ```number``` is the sequence number of the sequence the suffix is from. I also use different colors for each sequence in the representation. 
 
 Check the **gh-pages** branch if you're interested in the visualization part. The theme used is [Solo](http://chibicode.github.io/solo). I'm open to any suggestions.
 
