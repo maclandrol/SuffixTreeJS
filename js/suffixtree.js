@@ -12,7 +12,7 @@ var treeData = stree.addString('MISSISSIPPI$').convertToJson();
 // ************** Generate the tree diagram	 *****************
 var margin = {top: 5, right: 25, bottom: 20, left: 50},
 	width = 960 - margin.right - margin.left,
-	height = 700 - margin.top - margin.bottom;
+	height = 900 - margin.top - margin.bottom;
 	
 var i = 0,
 	duration = 750,
@@ -63,8 +63,6 @@ $( "#show" ).click(function() {
 			root = treeData;
 		}
 
-		svg.attr("height", height + margin.top + margin.bottom + str_list.length*50);
-		tree.size([height+str_list.length*30, width]);
 		root.x0 = height / 2;
 		root.y0 = 0;
   		update(root);
