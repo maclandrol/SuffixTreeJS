@@ -24,7 +24,7 @@ var tree = d3.layout.tree()
 var diagonal = d3.svg.diagonal()
 	.projection(function(d) { return [d.y, d.x]; });
 
-var svg = d3.select("#output").append("svg")
+var svg = d3.select(".output").append("svg")
 	.attr("width", width + margin.right + margin.left)
 	.attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -42,7 +42,7 @@ $( "#show" ).click(function() {
 		$( "#error" ).toggle(true);
 
 	}
-	else if(str_list.length > 0){
+	else if(str_list.length > 0 && !(str_list.length==1 && str_list[0]==="")){
 		$( "#error" ).toggle(false);
 		stree =  new SuffixTree();
 		var i = 0;
@@ -81,7 +81,7 @@ function update(source) {
 
   nodeEnter.append("circle")
 	  .attr("r", 1e-6)
-	  .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+	  .style("fill", function(d) { return d._children ? "#ddd" : "#fff"; });
 
   nodeEnter.append("text")
 	  .attr("x", function(d) { return d.children || d._children ? -13 : 13; })
@@ -97,7 +97,8 @@ function update(source) {
 
   nodeUpdate.select("circle")
 	  .attr("r", 10)
-	  .style("fill", function(d) { return d._children ? "lightsteelblue" : colorlist[d.seq]; });
+	  .style("fill", function(d) { return d._children ? "#ddd" : "#fff"; })
+	  .style("stroke", function(d) { return d._children ? "#bbb" : colorlist[d.seq]; });
 
   nodeUpdate.select("text")
 	  .style("fill-opacity", 1);
@@ -121,6 +122,8 @@ function update(source) {
   // Enter any new links at the parent's previous position.
   link.enter().insert("path", "g")
 	  .attr("class", "link")
+	  .style("stroke", function(d) { return d.target._children ? "#ccc" : colorlist[d.target.seq]; })
+
 	  .attr("d", function(d) {
 		var o = {x: source.x0, y: source.y0};
 		return diagonal({source: o, target: o});

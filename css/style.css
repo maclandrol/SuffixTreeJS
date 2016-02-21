@@ -4,7 +4,7 @@
 
 .node circle {
   fill: #fff;
-  stroke: steelblue;
+  stroke: #bbb;
   stroke-width: 3px;
 }
 
@@ -46,8 +46,6 @@
 	display : none;
 	margin-bottom:  15px;
 	padding: 10px;
-	background-repeat: no-repeat;
-	background-position: 10px center;
 	color: #D8000C;
 	background-color: #FFBABA;
 }
