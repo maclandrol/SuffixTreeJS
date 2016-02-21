@@ -63,9 +63,8 @@ $( "#show" ).click(function() {
 			root = treeData;
 		}
 
-		height += str_list.length*50 ;
-		svg.attr("height", height + margin.top + margin.bottom );
-		tree.size([height, width]);
+		svg.attr("height", height + margin.top + margin.bottom + str_list.length*50);
+		tree.size([height+str_list.length*30, width]);
 		root.x0 = height / 2;
 		root.y0 = 0;
   		update(root);
