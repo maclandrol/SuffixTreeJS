@@ -4,9 +4,15 @@ SuffixTree JS is a javascript implementation of [Ukkonen's algorithm](https://ww
 
 ### Visualization
 
-My main contribution is this website : http://mrnoutahi.com/SuffixTreeJS/ that enable suffix trees visualisation using [d3js](https://d3js.org/). Check the **gh-pages** branch if you're interested in the visualization part. The theme used is [Solo](http://chibicode.github.io/solo).
+My main contribution is this website : http://mrnoutahi.com/SuffixTreeJS/ that enable suffix trees visualisation using [d3js](https://d3js.org/). 
 
-I'm open to any suggestions.
+Each internal node can be collapsed.
+
+The suffix on each leave end with ```[start, number]``` where ```a``` is the position of the suffix (indexing tart at 0) and ```number``` is the sequence number. 
+
+I also use different colors for each sequence in the representation. 
+
+Check the **gh-pages** branch if you're interested in the visualization part. The theme used is [Solo](http://chibicode.github.io/solo). I'm open to any suggestions.
 
 
 ### License
