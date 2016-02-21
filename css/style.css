@@ -22,7 +22,7 @@
 .input{
 	width:inherit;
 	display: inline-block;
-	margin-bottom: 5rem;
+	margin-bottom: 2rem;
 }
 
 .input textarea{
@@ -50,5 +50,7 @@
 }
 
 .output{
+	width:inherit;
+
 
 }
