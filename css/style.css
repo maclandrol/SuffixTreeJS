@@ -50,6 +50,6 @@
 	background-color: #FFBABA;
 }
 
-.output{
-	overflow: auto;
+#output{
+    overflow: auto;
 }

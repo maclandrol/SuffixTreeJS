@@ -9,10 +9,14 @@ stree.addString('MISSION#');
 var treeData = stree.addString('MISSISSIPPI$').convertToJson();
 
 
+var realWidth = 1000;
+var realHeight = 800;
+
 // ************** Generate the tree diagram	 *****************
 var margin = {top: 5, right: 25, bottom: 20, left: 50},
-	width = 960 - margin.right - margin.left,
-	height = 600 - margin.top - margin.bottom;
+
+	width = realWidth - margin.right - margin.left,
+	height = realHeight - margin.top - margin.bottom;
 	
 var i = 0,
 	duration = 750,
@@ -20,24 +24,24 @@ var i = 0,
 
 var tree = d3.layout.tree()
 	.size([height, width]);
-
+	
 var diagonal = d3.svg.diagonal()
 	.projection(function(d) { return [d.y, d.x]; });
 
-var svg = d3.select(".output").append("svg")
-	.attr("width", width + margin.right + margin.left)
-	.attr("height", height + margin.top + margin.bottom)
-	.attr("display", "block")
+var svg = d3.select("#output").append("svg")
+    .attr("height", realHeight)
+    .attr("width", realWidth)
   .append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
 
 root = treeData;
 root.x0 = height / 2;
 root.y0 = 0;
 
 $( "#show" ).click(function() {
-	var str_list = $( "#words" ).val().split(",")
-
+	var str_list = $( "#words" ).val().split(",");
 
 	if (!check_char($( "#words" ).val(), special_chars)){
 		$( "#error" ).text("Your strings should not contain any of this special chars : " +  special_chars);
@@ -71,16 +75,17 @@ $( "#show" ).click(function() {
 
 });
 
-d3.select(self.frameElement).style("height", "500px");
+d3.select(self.frameElement).style("height", "800px");
 
 function update(source) {
 
+	var coeff = getDepth(root);
   // Compute the new tree layout.
   var nodes = tree.nodes(root).reverse(),
 	  links = tree.links(nodes);
 
   // Normalize for fixed-depth.
-  nodes.forEach(function(d) { d.y = d.depth * 180; });
+  nodes.forEach(function(d) { d.y = d.depth * width/coeff; });
 
   // Update the nodes…
   var node = svg.selectAll("g.node")
@@ -193,5 +198,18 @@ function check_char(str1, str2){
 	return str1.split('').filter(function(n){
 		return str2.indexOf(n)!= -1;
 	}).length <1;
+}
+
+getDepth = function (jdata) {
+    var depth = 0;
+    if (jdata.children) {
+        jdata.children.forEach(function (d) {
+            var cdepth = getDepth(d)
+            if (cdepth > depth) {
+                depth = cdepth
+            }
+        })
+    }
+    return 1 + depth
 }
 });

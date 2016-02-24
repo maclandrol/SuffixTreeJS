@@ -147,13 +147,12 @@ pre > code {
 
 .container {
   min-width: 15rem;
+  max-width: 60rem;
   margin: 0 auto;
   margin-left : 5rem;
   padding: 0 1rem;
-}
+  overflow: auto;
 
-.incontainer{
-  max-width: 55rem;
 }
 
 .author {
