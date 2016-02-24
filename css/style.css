@@ -51,4 +51,5 @@
 }
 
 .output{
+    overflow: scroll;
 }
