@@ -2,9 +2,13 @@
 
 SuffixTree JS is a javascript implementation of [Ukkonen's algorithm](https://www.cs.helsinki.fi/u/ukkonen/SuffixT1withFigs.pdf) for "generalized suffix tree". The code is essentially based on the snippets provided here : http://www.allisons.org/ll/AlgDS/Tree/Suffix/. 
 
+This is intended for CS students or anyone who want to build a generalized suffix tree in an intuitive and easy way.
+
 ### Visualization
 
-The main contribution is this website : http://mrnoutahi.com/SuffixTreeJS/ that enable suffix trees visualisation using [d3js](https://d3js.org/). 
+You can enter your sequences and build your tree here : http://mrnoutahi.com/SuffixTreeJS/ 
+
+The visualization is done using [d3js](https://d3js.org/). 
 
 ####Important points: 
 
@@ -14,8 +18,7 @@ The main contribution is this website : http://mrnoutahi.com/SuffixTreeJS/ that 
 5. The suffix on each leaf end with ```[start, number]``` where ```start``` is the position of the suffix (starting at 0) and ```number``` is the sequence number of the sequence the suffix is from. I also use different colors for each sequence in the representation. 
 3. There is a maximum of 12 sequences allowed (since the color palette used has only 12 colors).
 
-
-Check the **gh-pages** branch if you're interested in the visualization part. The theme used is [Solo](http://chibicode.github.io/solo). I'm open to any suggestions.
+Check the **gh-pages** branch if you're interested in the visualization part. The theme used is [Solo](http://chibicode.github.io/solo). I'm open to any suggestions and pull requests are welcome.
 
 
 ### License
