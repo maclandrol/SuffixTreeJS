@@ -6,7 +6,7 @@ This is intended for CS students or anyone who want to build a generalized suffi
 
 ### Visualization
 
-You can enter your sequences and build your tree here : http://mrnoutahi.com/SuffixTreeJS/ 
+You can enter your sequences and build your tree here : https://maclandrol.github.io/SuffixTreeJS/
 
 The visualization is done using [d3js](https://d3js.org/). 
 
